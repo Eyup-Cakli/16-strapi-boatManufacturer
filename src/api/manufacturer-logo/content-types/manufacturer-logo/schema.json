@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "manufacturer_logos",
+  "info": {
+    "singularName": "manufacturer-logo",
+    "pluralName": "manufacturer-logos",
+    "displayName": "ManufacturerLogo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "fileName": {
+      "type": "string"
+    },
+    "_softDeletedAt": {
+      "type": "datetime",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "_softDeletedById": {
+      "type": "integer",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    },
+    "_softDeletedByType": {
+      "type": "string",
+      "configurable": false,
+      "writable": false,
+      "visible": false,
+      "private": true
+    }
+  }
+}

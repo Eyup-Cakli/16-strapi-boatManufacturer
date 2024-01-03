@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hull_materials",
+  "info": {
+    "singularName": "hull-material",
+    "pluralName": "hull-materials",
+    "displayName": "HullMaterial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

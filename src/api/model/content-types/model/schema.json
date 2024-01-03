@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "models",
+  "info": {
+    "singularName": "model",
+    "pluralName": "models",
+    "displayName": "Model"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "lengthMeter": {
+      "type": "decimal"
+    },
+    "beamMeter": {
+      "type": "decimal"
+    },
+    "draftMeter": {
+      "type": "decimal"
+    },
+    "manufacturer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::manufacturer.manufacturer",
+      "inversedBy": "models"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::type.type",
+      "inversedBy": "models"
+    },
+    "hull_material": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hull-material.hull-material"
+    }
+  }
+}
