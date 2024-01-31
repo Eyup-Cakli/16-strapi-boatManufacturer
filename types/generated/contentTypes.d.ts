@@ -722,7 +722,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     username: Attribute.String &
@@ -751,6 +750,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.role'
     >;
+    image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -818,15 +818,15 @@ export interface ApiManufacturerManufacturer extends Schema.CollectionType {
     _softDeletedByType: Attribute.String & Attribute.Private;
     name: Attribute.String;
     webSite: Attribute.String;
-    manufacturer_logo: Attribute.Relation<
-      'api::manufacturer.manufacturer',
-      'oneToOne',
-      'api::manufacturer-logo.manufacturer-logo'
-    >;
     models: Attribute.Relation<
       'api::manufacturer.manufacturer',
       'oneToMany',
       'api::model.model'
+    >;
+    manufacturer_logo: Attribute.Relation<
+      'api::manufacturer.manufacturer',
+      'oneToOne',
+      'api::manufacturer-logo.manufacturer-logo'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -858,11 +858,8 @@ export interface ApiManufacturerLogoManufacturerLogo
     draftAndPublish: true;
   };
   attributes: {
+    name: Attribute.String & Attribute.Unique;
     image: Attribute.Media;
-    fileName: Attribute.String;
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -878,6 +875,9 @@ export interface ApiManufacturerLogoManufacturerLogo
       'admin::user'
     > &
       Attribute.Private;
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
   };
 }
 
@@ -907,6 +907,9 @@ export interface ApiModelModel extends Schema.CollectionType {
       'oneToOne',
       'api::hull-material.hull-material'
     >;
+    _softDeletedAt: Attribute.DateTime & Attribute.Private;
+    _softDeletedById: Attribute.Integer & Attribute.Private;
+    _softDeletedByType: Attribute.String & Attribute.Private;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -922,9 +925,6 @@ export interface ApiModelModel extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
-    _softDeletedAt: Attribute.DateTime & Attribute.Private;
-    _softDeletedById: Attribute.Integer & Attribute.Private;
-    _softDeletedByType: Attribute.String & Attribute.Private;
   };
 }
 

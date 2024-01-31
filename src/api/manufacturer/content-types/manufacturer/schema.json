@@ -39,16 +39,16 @@
     "webSite": {
       "type": "string"
     },
-    "manufacturer_logo": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::manufacturer-logo.manufacturer-logo"
-    },
     "models": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::model.model",
       "mappedBy": "manufacturer"
+    },
+    "manufacturer_logo": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::manufacturer-logo.manufacturer-logo"
     }
   }
 }
