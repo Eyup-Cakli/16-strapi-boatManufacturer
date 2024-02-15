@@ -6,6 +6,7 @@ import strapiCloud from "@strapi/plugin-cloud/strapi-admin";
 import documentation from "@strapi/plugin-documentation/strapi-admin";
 import i18N from "@strapi/plugin-i18n/strapi-admin";
 import usersPermissions from "@strapi/plugin-users-permissions/strapi-admin";
+import strapiBulkOperator from "strapi-bulk-operator/strapi-admin";
 import softDelete from "strapi-plugin-soft-delete/strapi-admin";
 import { renderAdmin } from "@strapi/strapi/admin";
 
@@ -15,6 +16,7 @@ renderAdmin(document.getElementById("strapi"), {
     documentation: documentation,
     i18n: i18N,
     "users-permissions": usersPermissions,
+    "strapi-bulk-operator": strapiBulkOperator,
     "soft-delete": softDelete,
   },
 });
